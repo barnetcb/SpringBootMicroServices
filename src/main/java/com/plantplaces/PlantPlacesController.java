@@ -2,7 +2,7 @@ package com.plantplaces;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-//Put some stuff
+//Put some stuff more
 @Controller
 public class PlantPlacesController {
 	
