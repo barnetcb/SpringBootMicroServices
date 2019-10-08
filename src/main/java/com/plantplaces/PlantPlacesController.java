@@ -1,10 +1,13 @@
 package com.plantplaces;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-//Put some stuff more and more more
+
+import com.plantplaces.dto.SpecimenDTO;
+import com.plantplaces.service.ISpecimenService;
 
 /**
  *Handle the / start endpoint
@@ -13,11 +16,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class PlantPlacesController {
+	@Autowired
+	private ISpecimenService specimenServiceStub;
 	
 	//anything that has /start will map to this method
 	@RequestMapping(value="/start", method=RequestMethod.GET)
 	public String read() {
-		
+		SpecimenDTO specimenDTO = specimenServiceStub.fetchById(43);
 		return "start";
 	}
 	
